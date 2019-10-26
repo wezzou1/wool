@@ -1,6 +1,8 @@
+@use 'sass:map';
+
 $z-index: ();
 @for $count from -10 through 10 {
-  $z-index: map-merge(
+  $z-index: map.merge(
     $z-index,
     (
       'z#{$count}': (

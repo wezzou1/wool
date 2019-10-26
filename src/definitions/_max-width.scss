@@ -1,6 +1,8 @@
+@use 'sass:map';
+
 $max-width: ();
 @each $key, $value in $max-widths {
-  $max-width: map-merge($max-width, (
+  $max-width: map.merge($max-width, (
     'max-w#{$key}': ( max-width: $value )
   ));
 }

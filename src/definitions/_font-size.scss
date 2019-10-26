@@ -1,7 +1,8 @@
-$font-size: ();
+@use 'sass:map';
 
+$font-size: ();
 @each $key, $value in $font-sizes {
-  $font-size: map-merge($font-size, (
+  $font-size: map.merge($font-size, (
     'f#{$key}': ( font-size: $value )
   ));
 }

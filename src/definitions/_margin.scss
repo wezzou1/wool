@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $margin: (
   'ma': ( margin: auto ),
   'mta': ( margin-top: auto ),
@@ -9,7 +11,7 @@ $margin: (
 );
 
 @each $key, $value in $margin-units {
-  $margin: map-merge($margin, (
+  $margin: map.merge($margin, (
     'm#{$key}': ( margin: $value ),
     'mt#{$key}': ( margin-top: $value ),
     'mv#{$key}': ( margin-top: $value, margin-bottom: $value ),

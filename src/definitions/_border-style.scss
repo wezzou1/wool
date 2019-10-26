@@ -1,7 +1,8 @@
-$border-style: ();
+@use 'sass:map';
 
+$border-style: ();
 @each $key, $value in $border-styles {
-  $border-style: map-merge($border-style, (
+  $border-style: map.merge($border-style, (
     'bs-#{$key}': ( border-style: $value )
   ));
 }

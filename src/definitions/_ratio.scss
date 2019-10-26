@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $ratio: (
   'r': (
     height: 0,
@@ -21,7 +23,7 @@ $ratio: (
 }
 
 @each $key, $value in $aspect-ratios {
-  $ratio: map-merge($ratio, (
+  $ratio: map.merge($ratio, (
     'r--#{$key}': ( padding-top: intrinsic-size($value))
   ));
 }

@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $colors: (
   'black': #000000,
   'white': #ffffff
@@ -39,14 +41,14 @@ $margin-units: () !default;
     $key: 'n#{$i * -5}'
   }
   $value: $i * 0.5rem;
-  $margin-units: map-merge($margin-units, ( $key: $value ));
+  $margin-units: map.merge($margin-units, ( $key: $value ));
 }
 
 $padding-units: () !default;
 @for $i from 0 through 50 {
   $key: $i * 5;
   $value: $key * 0.1rem;
-  $padding-units: map-merge($padding-units, ( $key: $value ));
+  $padding-units: map.merge($padding-units, ( $key: $value ));
 }
 
 $max-widths: (
@@ -95,7 +97,7 @@ $breakpoints: (
 
 $media-queries: () !default;
 @each $name, $breakpoint in $breakpoints {
-  $media-queries: map-merge($media-queries, (
+  $media-queries: map.merge($media-queries, (
     '#{$name}': 'min-width: #{$breakpoint}'
   ));
 }

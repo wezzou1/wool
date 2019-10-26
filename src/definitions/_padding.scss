@@ -1,7 +1,8 @@
-$padding: ();
+@use 'sass:map';
 
+$padding: ();
 @each $key, $value in $padding-units {
-  $padding: map-merge($padding, (
+  $padding: map.merge($padding, (
     'p#{$key}': ( padding: $value ),
     'pt#{$key}': ( padding-top: $value ),
     'pv#{$key}': ( padding-top: $value, padding-bottom: $value ),
